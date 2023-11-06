@@ -1,0 +1,147 @@
+body {
+    background-color: #DFBB8F;
+}
+
+.navbar {
+    margin: 0;
+    padding: 1%;
+    width: 97%;
+    height: 3%;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: rgb(55, 55, 55);
+    overflow: hidden;
+}
+
+.navbar > span {
+    color: white;
+    text-align: center;
+    padding: 1em 2em;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a {
+    padding: 1em 1em;
+    color: #f2f2f2;
+}
+
+#elements-button:hover {
+    background-color: #ddd;
+    color: black;
+}
+#molecules-button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#display-button {
+    background-color: #F5AD90;
+    color: black;
+}
+
+#navbar-logo {
+    color:#F5DB90; 
+    font-weight: bolder;
+}
+
+#navbar-title {
+    color:#F5AD90;
+    font-weight: bolder;
+}
+
+.content {
+    margin-top: 0%;
+    height: 86%;
+    width: 98%;
+    position: absolute;
+
+    background-color:beige;
+}
+
+.sidebar {
+    padding: 1%;
+    width: 17%;
+    height: 96%;
+
+    background-color: #f1f1f1;
+    position: absolute;
+    overflow-y: auto;
+
+    border: 1px solid black;
+}
+.sidebar a {
+    padding: 1em;
+
+    display: flex;
+    flex-flow: column nowrap;
+    outline: 5px black;
+}
+#molecules-label {
+    font-weight: bolder;
+}
+#molecule-list a:hover {
+    background-color: rgb(55, 55, 55);
+    color: white;
+}
+#molecule-list a.selected {
+    background-color: #F5AD90;
+    color: black;
+}
+
+.display {
+    margin-left: 19%;
+    padding: 1%;
+    height: 95%;
+    width: 79%;
+
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rotation {
+    margin: 0;
+    padding: 1%;
+    height: 13%;
+    width: 100%;
+}
+#rotation-label {
+    font-weight: bold;
+}
+#angle-input-div {
+    padding: 1em 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#rotate-button {
+    padding: 8px 18px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+
+    background-color: #29b82e;
+    border: none;
+    color: white;
+}
+
+#molecule-name {
+    margin-top: 1%;
+    font-weight: bold;
+    font-size: large;
+}
+#molecule-svg-image {
+    margin: 0;
+    padding: 1%;
+    height: 1000px;
+    width: 1000px;
+}

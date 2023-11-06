@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Display Molecule </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="display.js"></script>
+    <link rel="stylesheet" type="text/css" href="display.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <span id="navbar-logo">
+            <label> CIS 2750 A4 </label>
+        </span>
+        <span id="navbar-title">
+            <label> Display/Rotate A Molecule </label>
+        </span>
+        <span id="navbar-links">
+            <a id="display-button"> Display Molecule </label>
+            <a id="elements-button" href="/elements.html"> Edit Elements</a>
+            <a id="molecules-button" href="/molecules.html"> Add Molecule</a>
+        </span>
+    </div>
+
+    <div class="content">
+        <div class="sidebar">
+            <label id="molecules-label"> Molecule List: </label>
+            <br />
+            <div name="molecule-list" id="molecule-list">
+                <!-- Populate molecules list with jquery -->
+            </div>
+        </div>
+
+        <div class="display">
+            <div class="rotation">
+                <label id="rotation-label"> Rotate the molecule (Enter non-negative integers for angles in degrees) </label>
+                <div id="angle-input-div">
+                    <span class="angle-input">
+                        <label> Pitch (x-axis): </label>
+                        <input type="text" id="x-value" value="0" name="rotation_value" />
+                    </span>
+                    <span class="angle-input">
+                        <label> Yaw (y-axis): </label>
+                        <input type="text" id="y-value" value="0" name="rotation_value" />
+                    </span>
+                    <span class="angle-input">
+                        <label> Roll (z-axis): </label>
+                        <input type="text" id="z-value" value="0" name="rotation_value" />
+                    </span>
+                    <button id="rotate-button"> Rotate </button>
+                </div>
+            </div>
+            <br />
+            <label id="molecule-name"> Molecule: (Click on a molecule from the list to display it)</label>
+            <div id="molecule-svg-image" value="">
+                <!-- blank at first, changes based on selected molecule -->
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

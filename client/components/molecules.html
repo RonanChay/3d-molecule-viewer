@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Add Molecule </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="molecules.js"></script>
+    <link rel="stylesheet" type="text/css" href="molecules.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <span id="navbar-logo">
+            <label> CIS 2750 A4 </label>
+        </span>
+        <span id="navbar-title">
+            <label> Add A Molecule </label>
+        </span>
+        <span id="navbar-links">
+            <a id="display-button" href="/display.html">Display Molecule</label>
+            <a id="elements-button" href="/elements.html">Edit Elements</a>
+            <a id="molecules-button" >Add Molecule</a>
+        </span>
+    </div>
+
+    <div class="content">
+        <label id="upload-title"> Add a molecule </label>
+        <div class="file-upload">
+            <form enctype="multipart/form-data" id="upload-form">
+                <span>
+                    <label id="upload-label"> Upload SDF: </label>
+                    <input type="file" id="sdf-file" />
+                </span>
+
+                <span>
+                    <label id="molname-label"> Molecule name: </label>
+                    <input type="text" id="molecule-name" />
+                </span>
+            </form> 
+        </div>
+        <button id="add-molecule-button"> Add Molecule </button>
+
+        <label id="table-label"> Molecules Table </label>
+        <div class="molecule-table-div">
+            <table id="molecule-table">
+                <tr> <th> Molecule ID </th> <th> Molecule Name </th> <th> Number of Atoms </th> <th> Number of Bonds </th> </tr>
+                <!-- Populated using JQuery and ajax -->
+            </table>
+        </div>
+    </div>
+    
+</body>
+
+</html>

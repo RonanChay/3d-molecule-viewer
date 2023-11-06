@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <title> Edit Elements </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"> </script>
+    <script src="elements.js"></script>
+    <link rel="stylesheet" type="text/css" href="elements.css" />
+</head>
+
+<body>
+    <div class="navbar">
+        <span id="navbar-logo">
+            <label> CIS 2750 A4 </label>
+        </span>
+        <span id="navbar-title">
+            <label> Edit Elements (Add/Remove) </label>
+        </span>
+        <span id="navbar-links">
+            <a id="display-button" href="/display.html">Display Molecule</label>
+            <a id="elements-button">Edit Elements</a>
+            <a id="molecules-button" href="/molecules.html">Add Molecule</a>
+        </span>
+    </div>
+
+    <div class="content">
+        <label id="add-element-label"> Add an element </label>
+        <div class="input-element-info">
+            <span class="element-info-field">
+                <label id="element-number-label"> Element Num: </label>
+                <input type="text" id="element-number" />
+            </span>
+            <span class="element-info-field">
+                <label id="element-code-label"> Element Code: </label>
+                <input type="text" id="element-code" />
+            </span>
+            <span class="element-info-field">
+                <label id="element-name-label"> Element Name: </label>
+                <input type="text" id="element-name" />
+            </span>
+            <span class="element-info-field">
+                <label id="element-colour1-label"> Colour 1 (Hex): </label>
+                <input type="text" id="element-colour1" />
+            </span>
+            <span class="element-info-field">
+                <label id="element-colour2-label"> Colour 2 (Hex): </label>
+                <input type="text" id="element-colour2" />
+            </span>
+            <span class="element-info-field">
+                <label id="element-colour3-label"> Colour 3 (Hex): </label>
+                <input type="text" id="element-colour3" />
+            </span>
+            <span class="element-info-field">
+                <label id="element-radius-label"> Radius: </label>
+                <input type="text" id="element-radius" />
+            </span>
+            <button id="add-element-button"> Add Element </button>
+        </div>
+        <label id="table-label"> Elements Table </label>
+        <div class="element-table-div">
+            <table id="element-table">
+                <tr> <th> Element Number </th> <th> Element Code </th> <th> Element Name </th> <th> Colour 1 </th> <th> Colour 2 </th> <th> Colour 3 </th> <th> Radius </th> <th> Delete Element </th> </tr>
+                <!-- Populated using JQuery and ajax -->
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
