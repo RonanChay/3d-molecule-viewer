@@ -29,8 +29,10 @@ class MolHandler(BaseHTTPRequestHandler):
     '''
     def do_GET(self):
         # Send files to client
-        if self.path in public_files:
+        if self.path in public_files or self.path == "/display":
             filename = "../client/components" + self.path
+            if self.path == "/display":
+                filename += ".html"
             file_ptr = open(filename)
             webform = file_ptr.read()
             file_ptr.close()
@@ -72,7 +74,7 @@ class MolHandler(BaseHTTPRequestHandler):
             self.wfile.write(bytes("Error 404: Page does not exist. Ensure you typed the correct URL.", "utf-8"))
     
     '''
-    ' POST METHOD
+    ' POST METHODS
     '''
     def do_POST(self):
         # Upload an sdf and add molecule to database
@@ -243,7 +245,7 @@ class MolHandler(BaseHTTPRequestHandler):
     def get_svg(self, newMol):
         MolDisplay.radius = db.radius()
         MolDisplay.element_name = db.element_name()
-        MolDisplay.header = """<svg version="1.1" width="1000" height="1000" xmlns="http://www.w3.org/2000/svg">""" + db.radial_gradients()
+        MolDisplay.header = """<svg version="1.1" width="3000" height="3000" xmlns="http://www.w3.org/2000/svg">""" + db.radial_gradients()
 
         return newMol.svg()
 
@@ -261,4 +263,4 @@ if __name__ == "__main__":
         httpd = HTTPServer(('localhost', int(sys.argv[1]) ), MolHandler)
         httpd.serve_forever()
     else:
-        print("ERROR: Invalid number of command-line arguments - Enter the listening port number as the first command-line argument after the program name")
+        print("ERROR: Invalid number of command-line arguments - Enter the port number as the first command-line argument after the program name")

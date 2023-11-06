@@ -1,16 +1,24 @@
+################################################
+#     SET PYTHON VARIABLES HERE
+################################################
+
+# Python version [e.g: 3.12]
+PYTHON_VERSION = <version>
+# Path of your python header file [e.g: /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12]
+PYTHON_HEADER = <path>
+# Path of your python language library [e.g: /Library/Frameworks/Python.framework/Versions/3.12/lib]
+PYTHON_LIB = <path>
+
+################################################
+
 CC = clang
 CFLAGS = -std=c99 -Wall -pedantic
 
-# Location of your python3 header file
-PYTHON3_HEADER = /Library/Frameworks/Python.framework/Versions/3.12/include/python3.12
-# Location of your python3 language library
-PYTHON3_LIB = /Library/Frameworks/Python.framework/Versions/3.12/lib
-
 _molecule.so: libmol.so wrap molecule_wrap.o
-	$(CC) -shared molecule_wrap.o -L$(PYTHON3_LIB) -lpython3.12 -L. -lmol -dynamiclib -o _molecule.so
+	$(CC) -shared molecule_wrap.o -L$(PYTHON_LIB) -lpython$(PYTHON_VERSION) -L. -lmol -dynamiclib -o _molecule.so
 
 molecule_wrap.o: molecule_wrap.c
-	$(CC) $(CFLAGS) -c molecule_wrap.c -fPIC -I $(PYTHON3_HEADER) -o molecule_wrap.o
+	$(CC) $(CFLAGS) -c molecule_wrap.c -fPIC -I $(PYTHON_HEADER) -o molecule_wrap.o
 
 wrap: mol.c mol.h
 	swig -python molecule.i

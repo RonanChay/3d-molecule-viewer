@@ -335,45 +335,4 @@ class Database:
     # Helper method to commit transactions to database
     def commit_db(self):
         self.conn.commit()
-
-
-# # TESTING
-# if __name__ == "__main__": 
-#     db = Database(reset=True); 
-#     db.create_tables(); 
- 
-#     db.add_element( 1, 'H', 'Hydrogen', 'FFFFFF', '050505', '020202', 25 )
-#     db.add_element( 6, 'C', 'Carbon',   '808080', '010101', '000000', 40 )
-#     db.add_element( 7, 'N', 'Nitrogen', '0000FF', '000005', '000002', 40 )
-#     db.add_element( 8, 'O', 'Oxygen',   'FF0000', '050000', '020000', 40 )
-
-#     # db.remove_element('C')
- 
-#     fp = open( 'sdf/water-3D-structure-CT1000292221.sdf' );
-#     newMol = MolDisplay.Molecule()
-#     newMol.parse(fp)    
-#     db.add_molecule( 'Water', newMol ); 
-
-#     fp = open( 'sdf/CID_31260.sdf' );
-#     newMol = MolDisplay.Molecule()
-#     newMol.parse(fp)    
-#     db.add_molecule( 'CID', newMol ); 
-
-
-#     db.commit_db()
-
-#     print(db.get_molecules())
-#     # print(db.get_elements())
-
-#     MolDisplay.radius = db.radius(); 
-#     MolDisplay.element_name = db.element_name(); 
-#     MolDisplay.header += db.radial_gradients(); 
- 
-#     for mol_name in [ 'Water' ]: 
-#         mol = db.load_mol( mol_name ); 
-#         mol.sort(); 
-#         mx = molecule.mx_wrapper(90,0,0);
-#         mol.xform( mx.xform_matrix );
-#         fp = open( mol_name + ".svg", "w" ); 
-#         fp.write( mol.svg() ); 
-#         fp.close();
+        
